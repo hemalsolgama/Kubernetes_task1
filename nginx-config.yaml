@@ -1,0 +1,20 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: nginx-config
+data:
+  nginx.conf: |
+    events {
+    }
+    http {
+      index    index.html index.htm index.php;
+      server {
+        listen 80 default_server;
+
+        root /usr/share/nginx/html;
+        server_name _;
+
+        location / {
+        }
+      }
+    }

@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: hello
+spec:
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+  spec:
+    containers:
+      - name: hello
+        image: 'mynginx2:latest'
+        ports:
+          - containerPort: 80
+            protocol: TCP
+        imagePullPolicy: Never
+    restartPolicy: Always
